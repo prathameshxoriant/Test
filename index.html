@@ -1,31 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consent Buttons</title>
+    <title>Button Page</title>
+    <meta charset="utf-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link href="https://integration9.athocdevo.com/athoc-cdn/Scripts/lib-vendor/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 20px;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .custom-button {
+            font-size: 16px;
+            font-weight: bold;
+            color: #007bff;
+            background-color: #ffffff;
+            border: 2px solid #007bff;
+            padding: 10px 20px;
+            text-decoration: none;
+            margin: 0 10px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .custom-button:hover {
+            color: #ffffff;
+            background-color: #007bff;
+        }
+    </style>
 </head>
+
 <body>
 
-    <h2>Consent Buttons</h2>
-
-    <!-- Button 1: Grant Admin Consent -->
-    <button onclick="grantAdminConsent()">Grant Admin Consent</button>
-
-    <!-- Button 2: Grant Non-Admin Consent -->
-    <button onclick="grantNonAdminConsent()">Grant Non-Admin Consent</button>
-
-    <script>
-        // Function to handle Admin Consent button click
-        function grantAdminConsent() {
-            window.location.href = "https://example.com/grant-admin-consent";
-        }
-
-        // Function to handle Non-Admin Consent button click
-        function grantNonAdminConsent() {
-            window.location.href = "https://example.com/grant-non-admin-consent";
-        }
-    </script>
+    <!-- Two buttons with hyperlinks -->
+    <div class="button-container">
+        <a href="https://example.com/admin-consent" class="custom-button">Grant Admin Consent</a>
+        <a href="https://example.com/non-admin-consent" class="custom-button">Grant Non-Admin Consent</a>
+    </div>
 
 </body>
+
 </html>
