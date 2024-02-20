@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consent Buttons</title>
+</head>
+<body>
+
+    <h2>Consent Buttons</h2>
+
+    <!-- Button 1: Grant Admin Consent -->
+    <button onclick="grantAdminConsent()">Grant Admin Consent</button>
+
+    <!-- Button 2: Grant Non-Admin Consent -->
+    <button onclick="grantNonAdminConsent()">Grant Non-Admin Consent</button>
+
+    <script>
+        // Function to handle Admin Consent button click
+        function grantAdminConsent() {
+            window.location.href = "https://example.com/grant-admin-consent";
+        }
+
+        // Function to handle Non-Admin Consent button click
+        function grantNonAdminConsent() {
+            window.location.href = "https://example.com/grant-non-admin-consent";
+        }
+    </script>
+
+</body>
+</html>
