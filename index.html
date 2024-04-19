@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Response Form</title>
+<script src="https://statics.teams.microsoft.com/sdk/v1.11.0/js/MicrosoftTeams.min.js" integrity="sha384-eae1ZCPi/V5sj+V2ez1lYjKgr1XEEJrY1HQeUK9bC4ovTPgjMxFp37a0PzoY10PL" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -11,21 +12,21 @@
   <label for="queryParameter">Query Parameter:</label>
   <input type="text" id="queryParameter" name="queryParameter" readonly><br><br>
   
-  <label><input type="radio" name="response" value="Safe"> Safe1</label><br>
+  <label><input type="radio" name="response" value="Safe"> Safe</label><br>
   <label><input type="radio" name="response" value="Need Help"> Need Help</label><br><br>
   
   <input type="submit" value="Submit">
 </form>
 
 <script>
-  // Function to extract query parameter from URL
-  function getQueryParameter(name) {
-    const urlParams = new URLSearchParams(window.location.search);
-    return urlParams.get(name);
-  }
+  // Initialize the Microsoft Teams SDK
+  microsoftTeams.initialize();
 
-  // Set value of query parameter input
-  document.getElementById("queryParameter").value = getQueryParameter("queryParameter");
+  // Add event listener for when the page is loaded
+  microsoftTeams.getContext(function(context) {
+    // Set value of query parameter input
+    document.getElementById("queryParameter").value = context.entityId; // You can replace entityId with the appropriate context property
+  });
 
   // Form submission
   document.getElementById("responseForm").addEventListener("submit", function(event) {
