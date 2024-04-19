@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Response Form</title>
+</head>
+<body>
+
+<form id="responseForm">
+  <label for="queryParameter">Query Parameter:</label>
+  <input type="text" id="queryParameter" name="queryParameter" readonly><br><br>
+  
+  <label><input type="radio" name="response" value="Safe"> Safe</label><br>
+  <label><input type="radio" name="response" value="Need Help"> Need Help</label><br><br>
+  
+  <input type="submit" value="Submit">
+</form>
+
+<script>
+  // Function to extract query parameter from URL
+  function getQueryParameter(name) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(name);
+  }
+
+  // Set value of query parameter input
+  document.getElementById("queryParameter").value = getQueryParameter("queryParameter");
+
+  // Form submission
+  document.getElementById("responseForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent default form submission behavior
+
+    // Get selected response
+    const selectedResponse = document.querySelector('input[name="response"]:checked').value;
+    console.log("Selected Response:", selectedResponse);
+    
+    // Here you can do whatever you want with the selected response, like sending it to a server
+    // For now, let's just log it to the console
+  });
+</script>
+
+</body>
+</html>
